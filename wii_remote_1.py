@@ -231,8 +231,16 @@ while True:
     
   if (buttons & cwiid.BTN_MINUS):
     print 'Boton -'
+    for dc in range(100, -1, -5):
+            p.ChangeDutyCycle(dc)
+            time.sleep(0.5)  
+            #p.stop()
     time.sleep(button_delay)   
     
   if (buttons & cwiid.BTN_PLUS):
     print 'Boton +'
+    for dc in range(0, 101, 5):
+            p.ChangeDutyCycle(dc)
+            time.sleep(0.5)
+            #p.stop()
     time.sleep(button_delay)
